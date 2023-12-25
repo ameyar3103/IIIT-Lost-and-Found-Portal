@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="{{ url_for('static', filename='styles1.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="logo-container">
+        <img src="https://upload.wikimedia.org/wikipedia/en/e/e1/International_Institute_of_Information_Technology%2C_Hyderabad_logo.png" style="height: 100px;width:150px; margin-right: 10px;">
+        <h1 style="color:#19A7CE; margin-left: 350px;">Login</h1>
+    </div>
+    <hr>
+    <form id="login-form" action="/login" >
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required><br>
+      
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br>
+      
+        <input type="submit" value="Submit">
+    </form>
+    Not registered yet? Sign up Now by <a href="/register">Clicking here</a>
+    <hr>
+    <div class="footer-basic">
+        <footer>           
+            
+            <p class="copyright">©International Institute of Information Technology, Hyderabad</p>
+        </footer>
+      </div>
+</body>
+</html>

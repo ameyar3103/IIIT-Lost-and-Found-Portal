@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<link rel="stylesheet" href="{{ url_for('static', filename='about.css') }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bitter:wght@500&family=Dancing+Script:wght@600&display=swap"
+    rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Bitter:wght@500&family=Dancing+Script:wght@600&family=Permanent+Marker&display=swap"
+    rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Bitter:wght@500&family=Great+Vibes&family=Permanent+Marker&display=swap"
+    rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+    href="https://fonts.googleapis.com/css2?family=Bitter:wght@500&family=Great+Vibes&family=Inspiration&family=Permanent+Marker&display=swap"
+    rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Merriweather&display=swap" rel="stylesheet">
+
+<head>
+    <title>About Us</title>
+
+</head>
+
+<body>
+    <nav class="nav active">
+        <div class="container" id="clr">
+            <img src="https://upload.wikimedia.org/wikipedia/en/e/e1/International_Institute_of_Information_Technology%2C_Hyderabad_logo.png"
+                alt="Your Image" class="logo">
+            <ul>
+                <li><a href="/post/lost">LOST</a></li>
+                <li><a href="/post/found">FOUND</a></li>
+                <li><a href="/post/sell">SELL</a></li>
+                <li><a href="/post/borrow">BORROW</a></li>
+                <li><a href="/all-posts">ALL POSTS</a></li>
+                <li><a href="/dashboard">DASHBOARD</a></li>
+                <li><a href="/logout">{{ text }}</a></li>
+
+            </ul>
+        </div>
+    </nav>
+    <pre>     </pre>
+    <pre>     </pre>
+    <pre>     </pre>
+    <pre>     </pre>
+
+
+    <div class="hero"
+        style="background-image: url('https://images.pexels.com/photos/4571219/pexels-photo-4571219.jpeg?auto=compress&cs=tinysrgb&w=1600');">
+        <div class="container">
+            <h1 style="font-family:Permanent Marker;font-size:100px">About Us</h1>
+            <p style="font-family:Inspiration;font-size:60px;" id="type">Hello there &#33;</p>
+
+        </div>
+    </div>
+
+    <div class="body">
+        <h1 style="text-align: center;font-family: Permanent Marker;font-size:100px;">LFS ONLINE</h1>
+        <p style="font-family:Dancing Script;font-size: 30px;">
+
+            Welcome to our online platform for all things lost, found, bought, borrowed, and sold within our college
+            community. Our website provides a convenient and user-friendly interface for students, faculty, and staff to
+            connect with one another and exchange goods and services.
+
+            Whether you've lost a valuable item or found something that doesn't belong to you, our lost and found
+            section is here to help. Simply post a description of the item and its location, and our community members
+            can help reunite it with its owner.
+
+            If you're looking to buy or sell items, our marketplace section allows you to browse and list products, from
+            textbooks to furniture, at affordable prices. You can also borrow items from other members of the community,
+            such as tools or equipment for a project.
+
+            Our website is designed to foster a sense of community within our college and encourage sustainable
+            consumption habits by promoting reuse and sharing.
+        <p style="font-family:Dancing Script;font-size:60px; color: rgb(149, 37, 37);">
+            Join our platform today and start connecting with others in your community!
+        </p>
+        <pre>     </pre>
+        <pre>     </pre>
+        <p style="font-family:Merriweather;font-size:60px;text-align: center;">
+            The Creators
+        </p>
+        <pre>     </pre>
+        <pre>     </pre>
+
+
+    </div>
+    <div class="image-container">
+        <div class="image-item">
+            <img src="{{url_for('static', filename='images/praneeth.jpeg') }}" alt="Image 1" style="height:200px ;width:200px;background-size:cover;">
+            <div class="text-container">
+                <p style="font-family:Dancing Script; text-align:center;font-size: 30px;">Sai Praneeth</p>
+            </div>
+        </div>
+        <div class="image-item">
+            <img src="{{url_for('static', filename='images/Ameya.jpg') }}" alt="Image 2" style="height:200px ;width:200px;background-size:cover;">
+            <div class="text-container">
+                <p style="font-family:Dancing Script; text-align:center;font-size: 30px;">Ameya Rathod</p>
+            </div>
+        </div>
+        <div class="image-item">
+            <img src="{{url_for('static', filename='images/rahul.jpeg') }}" alt="Image 3" style="height:200px ;width:200px;background-size:cover;">
+            <div class="text-container">
+                <p style="font-family:Dancing Script; text-align:center;font-size: 30px;">Rahul Singal</p>
+            </div>
+        </div>
+    </div>
+
+
+    <style>
+        .image-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            /* Align items to the top of the container */
+        }
+
+        .image-item {
+            flex-basis: calc((100% - 40px) / 3);
+            /* Set width of each image-item to be 1/3 of the available width (subtracting margin space) */
+            text-align: center;
+            margin-right: 20px;
+            /* Add 20px margin to the right of each image-item except the last one */
+        }
+
+        .image-item:last-child {
+            margin-right: 0;
+            /* Remove margin from the last image-item */
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+            /* Add 10px margin below each image */
+        }
+
+        .text-container {
+            margin-top: 10px;
+            /* Add 10px margin on top of each text container */
+        }
+
+        p {
+            margin: 0;
+        }
+    </style>
+
+
+
+
+
+    <div class="footer-basic">
+        <footer>
+            <div class="social">
+                <a href="insta.png"><i class="icon ion-social-instagram fa"></i></a>
+                <a href="linkedIn.png"><i class="icon ion-social-linkedIn fa"></i></a>
+                <a href="twit.jpeg"><i class="icon ion-social-twitter fa"></i></a>
+                <a href="fb.png"><i class="icon ion-social-faartook fa"></i></a>
+            </div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="/">Home</a></li>
+                <li class="list-inline-item"><a href="/about">About</a></li>
+
+                <!-- <li class="list-inline-item"><a href="about.html">About Us</a></li> -->
+            </ul>
+            <p class="copyright">© International Institute of Information Technology Hyderabad 2023</p>
+        </footer>
+    </div>
+</body>
+
+</html>

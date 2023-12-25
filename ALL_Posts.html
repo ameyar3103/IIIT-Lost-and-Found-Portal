@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>All posts</title>
+        <style>
+            body {
+                background-color:#080b0f;
+                color:white;
+            }
+            .head{
+                text-align: center;
+                font-family: Shadows Into Light;
+                margin-top:175px;
+            }
+            .rows {
+                display: flex;
+                flex-direction: column;
+                font-size:30px;
+            }
+            .columns {
+                flex:1;
+                display:flex;
+                flex-direction: row;
+                border-color: white;
+                border-style: solid;
+                border-radius: 30px;
+                margin-bottom: 5px;
+            }
+            .image{
+                flex:1;
+                height:auto;
+            }
+            .info{
+                flex:2;
+            }
+            img {
+                border-radius:30px;
+                z-index: 0;
+                padding:10px;
+            }
+            .filter {
+                text-align: center;
+            }
+            .nav{
+    position: fixed;
+    background-color: #222;
+    top: 0;
+    left: 0;
+    right: 0;
+    transition: all.3s ease-in-out;
+}
+
+.nav .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    transition: all.3s ease-in-out;
+}
+
+.nav ul{
+    display: flex;
+    list-style-type: none;
+    align-items: center;
+    justify-content: center;
+    height: 200px;
+    margin: -75px auto -75px auto;
+    width: 100%;
+}
+
+.nav a{
+    color: white;
+    text-decoration: none;
+    padding: 7px 15px;
+    transition: all.3s ease-in-out;
+
+    text-align: center;
+    font-size: 15px;
+    color: #e2e2e2;
+    font-weight: bold;
+    text-decoration: none;
+    letter-spacing: 5px;
+    text-shadow: 1px 1px 1px #bb2323;
+  
+    position: relative;
+    z-index: 1;
+    margin: 0 auto;
+    display: block;
+}
+
+.nav li{
+  /* float: left;  */
+  list-style: none;
+  margin: 10px 20px;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  color: #000;
+}
+
+
+
+.nav a.current, .nav a:hover{
+    color: #ffffff;
+    font-weight: bold;
+    border-bottom: 5px solid #571924;
+    padding-bottom: 3px
+}
+.logo {
+    display: block;
+    width: 100px; /* Change this to your image's width */
+    height: auto;
+    margin: 10px 0; /* Change this to adjust the image's position */
+    float: left;
+    background-color: #e2e2e2;
+  }
+  .footer-basic {
+    padding:40px 0;
+    background-color:#571924;
+    color:#aaa;
+    margin-top:20px;
+  }
+  
+  .footer-basic ul {
+    padding:0;
+    list-style:none;
+    text-align:center;
+    font-size:18px;
+    line-height:1.6;
+    margin-bottom:0;
+  }
+  
+  .footer-basic li {
+    padding:0 10px;
+  }
+  
+  .footer-basic ul a {
+    color:inherit;
+    text-decoration:none;
+    opacity:0.8;
+  }
+  
+  .footer-basic ul a:hover {
+    opacity:1;
+  }
+  
+  .footer-basic .social {
+    text-align:center;
+    padding-bottom:25px;
+  }
+  
+  .footer-basic .social > a {
+    font-size:24px;
+    width:40px;
+    height:40px;
+    line-height:40px;
+    display:inline-block;
+    text-align:center;
+    border-radius:50%;
+    border:1px solid #ccc;
+    margin:0 8px;
+    color:inherit;
+    opacity:0.75;
+  }
+  
+  .footer-basic .social > a:hover {
+    opacity:0.9;
+  }
+  
+  .footer-basic .copyright {
+    margin-top:15px;
+    text-align:center;
+    font-size:13px;
+    color:#aaa;
+    margin-bottom:0;
+  }
+        </style>
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="nav active">
+            <div class="container" id="clr">
+            <img src="https://upload.wikimedia.org/wikipedia/en/e/e1/International_Institute_of_Information_Technology%2C_Hyderabad_logo.png" alt="Your Image" class="logo">
+                <ul>
+                    <li><a href="about.html">ABOUT US</a> </li>
+                    <li><a href="lostform.html">LOST</a></li>
+                    <li><a href="foundform.html">FOUND</a></li>
+                    <li><a href="sellform.html">SELL</a></li>
+                    <li><a href="ALL_Posts.html">All Posts</a></li>
+                    <li><a href="login.html">LogOut</a></li>
+                </ul>
+            </div>
+        </nav>
+        <h1 class="head">All Posts!</h1>
+        <h2 class="filter"><label for="dropdown">Select a filter:</label>
+            <select id="dropdown" style="font-size: 20px;" name="filter">
+              <option class="choice"value="cat">Category</option>
+              <option class="choice"value="type">Type of object</option>
+            </select>
+            </h2>
+        <div class="rows">
+            <div class="grayout" style="z-index:1000;margin-left: 250px;margin-right: 250px;border-radius:30px;margin-bottom:5px;">
+            <div class="columns">
+                <div class="image"><img src="https://icon-library.com/images/unknown-person-icon/unknown-person-icon-10.jpg"></div>
+                <div class="info"><div class="for-cat-filter">Category: Lost</div>Name: name<br>Location: location<br>
+                    <div class="for-type-filter">Type of object: type</div>Additional info: add<br>
+                    Contact: number<br>
+                </div>  <div class="if-sell"></div>
+                </div>
+            </div>
+            <div class="grayout" style="z-index:1000;margin-left: 250px;margin-right: 250px;border-radius:30px;margin-bottom:5px;">
+            <div class="columns">
+                <div class="image"><img src="https://icon-library.com/images/unknown-person-icon/unknown-person-icon-10.jpg"></div>
+                <div class="info"><div class="for-cat-filter">Category: Sell</div>Name: name<br>Location: location<br>
+                   <div class="for-type-filter">Type of object: type</div>Price: price<br>Condition: condition<br>
+                    Contact: number<br>
+                </div><div class="if-sell"></div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-basic">
+            <footer>
+                <ul class="list-inline">
+                    <li class="list-inline-item"><a href="homepage.html">Home</a></li>
+                </ul>
+                <p class="copyright">© International Institute of Information Technology Hyderabad 2023</p>
+            </footer>
+        </div>
+        <script src="allposts.js"></script>
+    </body>
+</html>

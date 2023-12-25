@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrow</title>
+    <link href="styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="nav active">
+        <div class="container" id="clr">
+        <img src="https://upload.wikimedia.org/wikipedia/en/e/e1/International_Institute_of_Information_Technology%2C_Hyderabad_logo.png" alt="Your Image" class="logo">
+            <ul>
+                <li><a href="about.html">ABOUT US</a></li>
+                <li><a href="lostform.html" class="current">LOST</a></li>
+                <li><a href="foundform.html">FOUND</a></li>
+                <li><a href="sellform.html">SELL</a></li>
+                
+                <li><a href="ALL_Posts.html">ALL POSTS</a></li>
+                <li><a href="login.html">LOGOUT</a></li>
+                
+            </ul>
+        </div>
+    </nav>
+    <pre>     </pre>
+    <pre>     </pre>
+    <pre>     </pre>
+    <pre>     </pre>
+    <h1 style="font-family: Shadows Into Light;text-align: center;font-size: 60px;">BORROW ITEMS!</h1>
+    
+
+<form action="/post/lost" method="post" enctype="multipart/form-data">
+        
+
+        <label for="borrow">Item to Borrow</label>
+        <input type="text" id="borrow" name="borrow" required><br>
+
+        <label for="category">Type/Category:</label>
+        <input type="text" id="category" name="type" required><br>
+
+        <label for="date-lost">Duration</label>
+        <input type="text" id="date-lost" name="date" required><br>
+
+        <label for="date-lost">Room Number along with Hostel</label>
+        <input type="text" id="date-lost" name="location" ><br>
+
+        <label for="contacts">Contact Number</label>
+        <input type="number" id="contacts" name="contacts" required><br>
+               
+
+        <label for="additional-info">Additional Specifications</label>
+        <input type="text" id="additional-info" name="desc"><br>
+
+        <input type="submit" value="Submit">
+    </form>
+    <div class="footer-basic">
+        <footer>
+            <div class="social">
+                <a href="insta.png"><i class="icon ion-social-instagram fa"></i></a>
+                <a href="linkedIn.png"><i class="icon ion-social-linkedIn fa"></i></a>
+                <a href="twit.jpeg"><i class="icon ion-social-twitter fa"></i></a>
+                <a href="fb.png"><i class="icon ion-social-faartook fa"></i></a>
+            </div>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="homepage.html">Home</a></li>
+                <!-- <li class="list-inline-item"><a href="about.html">About Us</a></li> -->
+            </ul>
+            <p class="copyright">© International Institute of Information Technology Hyderabad 2023</p>
+        </footer>
+    </div>
+
+
+
+</body>
+
+</html>

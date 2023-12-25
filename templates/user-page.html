@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', filename='user.css') }}" rel="stylesheet">
+    <title>User Page</title>
+</head>
+<body style="">
+    <nav class="nav active">
+        <div class="container" id="clr">
+        <img src="https://upload.wikimedia.org/wikipedia/en/e/e1/International_Institute_of_Information_Technology%2C_Hyderabad_logo.png" alt="Your Image" class="logo">
+            <ul>
+                <li><a href="/post/lost">LOST</a></li>
+                <li><a href="/post/found">FOUND</a></li>
+                <li><a href="/post/sell">SELL</a></li>
+                <li><a href="/post/borrow">BORROW</a></li>
+                <li><a href="/all-posts">ALL POSTS</a></li>
+                <li><a href="/dashboard" class="current">DASHBOARD</a></li>
+                <li><a href="/logout">LOGOUT</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="greet-user">Hello {{ data[1] }},</div>
+
+    <div class="notif-bg">
+        <div class="notif" style="height:200px;">
+            <div class="notif-notice">This will delete the post.</div>
+            <div class="notif-btn delete-btn">DELETE</div>
+            <div class="notif-btn cancel-btn" style="border:2px solid #222; background-color: #eee; color:#222;">CANCEL</div>
+        </div>
+    </div>
+
+    <div class="your-posts" style="margin-top:1%;">
+        {% for post in posts %}
+        <div class="post" id="post-{{ post[0] }}">
+            <div class="post-img" style="background: url('{{ url_for("static", filename=post[12]) }}'), url(https://jkfenner.com/wp-content/uploads/2019/11/default.jpg); background-size:cover;background-position:center;"></div>
+            <div class="post-title">{{ post[1] }}</div>
+            <div class="post-category">{{ post[7] }}</div>
+            <div class="post-desc">{{ post[13] }}</div>
+            <div class="post-type">{{ post[8] }}</div>
+            <div class="post-price">${{ post[5] }}</div>
+            <div class="post-time-place">
+                {{ post[8] }} 
+                {% if post[3] != "" %}
+                    on {{ post[3] }}
+                {% endif %}
+                {% if post[6] != "" %}
+                    {% if post[8].lower() == "borrow" %}
+                        for {{ post[6].split(":")[0] }}h {{ post[6].split(":")[1] }}m
+                    {% else %}
+                        around {{ post[6] }}
+                    {% endif %}
+                {% endif %} 
+                {% if post[4] != "" %}
+                    near {{ post[4] }}
+                {% endif %}
+                </div>
+            <div class="post-status">
+                {% if post[8].lower() == "sell" %}
+                Sold?
+                {% elif post[8].lower() == "lost" %}
+                Found?
+                {% elif post[8].lower() == "borrow" %}
+                Borrowed?
+                {% else %}
+                Returned?
+                {% endif %}
+            </div>
+            <!-- <div class="post-contact">&phone; {{ post[2] }}</div> -->
+            <!-- <div class="time-post">06/05/2023 23:25:56</div> -->
+        </div>
+        {% endfor %}
+    </div>
+    <div class="your-details">
+        <div class="details-head">Your Details</div>
+        <div class="details"><b>Name: </b> {{data[1]}}</div>
+        <div class="details"><b>Mail: </b> <span style="font-size:80%;">{{data[0]}}</span></div>
+        <div class="details"><b>&phone;: </b> {{data[2]}}</div>
+        <div class="details"><b>Gender: </b> {{data[4]}}</div>
+        <div class="details" ><b>Batch: </b> <span style="text-transform:uppercase;">{{data[5]}}</span></div>
+    </div>
+
+    
+    <div class="footer-basic">
+        <footer>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="/">Home</a></li>
+                <li class="list-inline-item"><a href="/about">About</a></li>
+            </ul>
+            <p class="copyright">© International Institute of Information Technology Hyderabad 2023</p>
+        </footer>
+    </div>
+
+    <script src="{{ url_for ('static', filename='user.js') }}"></script>
+</body>
+</html>

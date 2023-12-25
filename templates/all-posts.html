@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>All posts</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='user.css') }}">
+            <link rel="preconnect" href="https://fonts.googleapis.com">
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+            <link href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <nav class="nav active">
+            <div class="container" id="clr">
+            <img src="https://upload.wikimedia.org/wikipedia/en/e/e1/International_Institute_of_Information_Technology%2C_Hyderabad_logo.png" alt="Your Image" class="logo">
+                <ul>
+                    <li><a href="/post/lost">LOST</a></li>
+                    <li><a href="/post/found">FOUND</a></li>
+                    <li><a href="/post/sell">SELL</a></li>
+                    <li><a href="/post/borrow">BORROW</a></li>
+                    <li><a href="/all-posts" class="current">ALL POSTS</a></li>
+                    <li><a href="/dashboard">DASHBOARD</a></li>
+                    <li><a href="/logout">{{text}}</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- <h1 class="head">All Posts!</h1> -->
+        <h2 class="filter"><label for="dropdown"><b>Select a filter:</b></label>
+            <select id="dropdown" style="" name="filter">'
+                <optgroup>
+                    <option class="choice" value="cat">Category</option>
+                    <option class="choice" value="type">Type of object</option>
+                </optgroup>
+            </select>
+        </h2>
+
+        <div class="notif-bg">
+            <div class="notif">
+                <div class="contact-head">Contact Information</div>
+                <div class="contact-name"><b>Name:</b> Praneeth</div>
+                <div class="contact-num">&phone;: 696969</div>
+                <div class="contact-mail"><b>Mail:</b> mail@mail.com</div>
+                <div class="contact-batch"><b>Batch:</b> UG1</div>
+                <div class="contact-close">&times; Close</div>
+            </div>
+        </div>
+        <div class="your-posts">
+            {% for post in posts %}
+            <div class="post">
+                <div class="hidden">{{ post[10] }}</div>
+                <div class="post-img" style="background: url('{{ url_for("static", filename=post[12]) }}'), url(https://jkfenner.com/wp-content/uploads/2019/11/default.jpg); background-size:cover;background-position:center;"></div>
+                <div class="post-title">{{ post[1] }}</div>
+                <div class="post-category">{{ post[7] }}</div>
+                <div class="post-desc">{{ post[13] }}</div>
+                <div class="post-type">{{ post[8] }}</div>
+                <div class="post-price">${{ post[5] }}</div>
+                <div class="post-time-place">
+                    {{ post[8] }} 
+                    {% if post[3] != "" %}
+                        on {{ post[3] }}
+                    {% endif %}
+                    {% if post[6] != "" %}
+                        {% if post[8].lower() == "borrow" %}
+                            for {{ post[6].split(":")[0] }}h {{ post[6].split(":")[1] }}m
+                        {% else %}
+                            around {{ post[6] }}
+                        {% endif %}
+                    {% endif %} 
+                    {% if post[4] != "" %}
+                        near {{ post[4] }}
+                    {% endif %}
+                </div>
+                <!-- <div class="post-contact">&phone; {{ post[2] }}</div> -->
+                <div class="post-status">
+                    {% if post[8].lower() == "sell" %}
+                    Buy $
+                    {% elif post[8].lower() == "lost" %}
+                    Did you find it?
+                    {% elif post[8].lower() == "found" %}
+                    Is this yours?
+                    {% else %}
+                    Lend It?
+                    {% endif %}
+                </div>
+                <!-- <div class="time-post">06/05/2023 23:25:56</div> -->
+            </div>
+            {% endfor %}
+        </div>
+
+        <div class="footer-basic">
+            <footer>
+                <ul class="list-inline">
+                     <li class="list-inline-item"><a href="/">Home</a></li>
+                     <li class="list-inline-item"><a href="/about">About</a></li>
+                </ul>
+                <p class="copyright">© International Institute of Information Technology Hyderabad 2023</p>
+            </footer>
+        </div>
+        <script src="{{ url_for('static', filename='allposts.js') }}"></script>
+    </body>
+</html>
